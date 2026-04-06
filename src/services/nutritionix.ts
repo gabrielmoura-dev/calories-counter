@@ -97,6 +97,10 @@ function mapBranded(b: NixBranded): FoodSearchHit | null {
     productName: name,
     brand: (b.brand_name ?? '').trim(),
     kcalPer100g: kcalPer100gFromBranded(b),
+    proteinPer100g: null,
+    carbsPer100g: null,
+    fatPer100g: null,
+    servingOptions: [],
   }
 }
 
@@ -111,6 +115,10 @@ function mapCommon(c: NixCommon): FoodSearchHit | null {
     brand: '',
     /** Instant não traz calorias para common; usuário pode usar fallback OFF ou item branded */
     kcalPer100g: null,
+    proteinPer100g: null,
+    carbsPer100g: null,
+    fatPer100g: null,
+    servingOptions: [],
   }
 }
 

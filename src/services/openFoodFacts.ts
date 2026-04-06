@@ -48,6 +48,10 @@ function mapProduct(p: OffSearchProduct): FoodSearchHit | null {
     productName: name,
     brand,
     kcalPer100g: readKcalPer100g(p.nutriments),
+    proteinPer100g: null,
+    carbsPer100g: null,
+    fatPer100g: null,
+    servingOptions: [],
   }
 }
 
