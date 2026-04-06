@@ -81,11 +81,10 @@ function PortionDialogBody({ hit, kcalPer100, onClose }: PortionDialogBodyProps)
     savedPref ?? defaultItemWeight != null
   )
 
-  const [gramsStr, setGramsStr] = useState('100')
+  const defaultWeight = defaultItemWeight ?? 100
   const [itemsStr, setItemsStr] = useState('1')
-  const [itemWeightStr, setItemWeightStr] = useState(
-    String(defaultItemWeight ?? 100)
-  )
+  const [itemWeightStr, setItemWeightStr] = useState('100')
+  const [gramsStr, setGramsStr] = useState('100')
 
   const grams = Number.parseFloat(gramsStr.replace(',', '.'))
   const items = Number.parseFloat(itemsStr.replace(',', '.'))

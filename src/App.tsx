@@ -1,12 +1,26 @@
 import { useMemo, useState } from 'react'
-
 import { FoodSearch } from './components/food/FoodSearch'
 import { MealCard } from './components/meals/MealCard'
 import { DayResult } from './pages/DayResult'
+import { DEFAULT_DAILY_GOAL_KCAL } from './constants/goals'
 import { useMealsStore } from './stores/useMealsStore'
 import { isMealOnLocalDay } from './utils/date'
 
 type Page = 'home' | 'dayResult'
+
+function getProgressColor(percent: number): string {
+  if (percent >= 100) return 'text-emerald-500 dark:text-emerald-400'
+  if (percent >= 50) return 'text-orange-400 dark:text-orange-300'
+  if (percent >= 26) return 'text-white dark:text-white'
+  return 'text-red-400 dark:text-red-400'
+}
+
+function getProgressBarColor(percent: number): string {
+  if (percent >= 100) return 'bg-emerald-500'
+  if (percent >= 50) return 'bg-orange-400'
+  if (percent >= 26) return 'bg-white'
+  return 'bg-red-400'
+}
 
 function App() {
   const [page, setPage] = useState<Page>('home')
@@ -22,6 +36,11 @@ function App() {
     () => todayMeals.reduce((sum, m) => sum + m.calories, 0),
     [todayMeals],
   )
+
+  const percent = Math.round((todayTotalKcal / DEFAULT_DAILY_GOAL_KCAL) * 100)
+  const barWidth = Math.min(100, percent)
+  const colorClass = getProgressColor(percent)
+  const barColor = getProgressBarColor(percent)
 
   if (page === 'dayResult') {
     return <DayResult onNewDay={() => setPage('home')} />
@@ -45,11 +64,27 @@ function App() {
           <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Hoje</h2>
           <p className="text-sm tabular-nums text-slate-600 dark:text-slate-400">
             Total:{' '}
-            <span className="font-bold text-emerald-600 dark:text-emerald-400">
+            <span className={`font-bold ${colorClass}`}>
               {todayTotalKcal} kcal
             </span>
           </p>
         </div>
+
+        {/* Barra de progresso da meta diária */}
+        {todayTotalKcal > 0 && (
+          <div className="mb-4">
+            <div className="mb-1 flex justify-between text-xs text-slate-500 dark:text-slate-400">
+              <span>Progresso da meta diária</span>
+              <span className={`font-semibold tabular-nums ${colorClass}`}>{percent}%</span>
+            </div>
+            <div className="h-2 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800">
+              <div
+                className={`h-full rounded-full transition-all duration-500 ${barColor}`}
+                style={{ width: `${barWidth}%` }}
+              />
+            </div>
+          </div>
+        )}
 
         {todayMeals.length === 0 ? (
           <p className="rounded-lg border border-dashed border-slate-300 bg-white/50 px-4 py-8 text-center text-sm text-slate-500 dark:border-slate-600 dark:bg-slate-900/40 dark:text-slate-400">
