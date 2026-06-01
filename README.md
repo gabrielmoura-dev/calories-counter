@@ -1,73 +1,96 @@
-# React + TypeScript + Vite
+# 🔢 Calories Counter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web para rastreamento de calorias e informações nutricionais, consumindo a API da [Nutritionix](https://www.nutritionix.com/business/api). Pesquise qualquer alimento e obtenha dados nutricionais detalhados em tempo real.
 
-Currently, two official plugins are available:
+🔗 **[Acesse a aplicação](https://gabrielmoura-dev.github.io/calories-counter)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Funcionalidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Busca de alimentos via API da Nutritionix (banco de dados nutricional dos EUA)
+- Exibição de calorias, macronutrientes e informações detalhadas
+- Gerenciamento de estado global com Zustand
+- Interface responsiva com Tailwind CSS
+- Suporte a PWA (Progressive Web App) - instalável no celular
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tecnologias
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+<div align="center">
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+![React](https://img.shields.io/badge/React_19-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite_8-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind_CSS_4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Zustand](https://img.shields.io/badge/Zustand-443E38?style=for-the-badge&logo=react&logoColor=white)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+</div>
+
+---
+
+## 🚀 Como rodar localmente
+
+### Pré-requisitos
+
+- [Node.js](https://nodejs.org/) (v18+)
+- Uma conta gratuita na [Nutritionix API](https://www.nutritionix.com/business/api) para obter `APP_ID` e `APP_KEY`
+
+### Instalação
+
+```bash
+# Clone o repositório
+git clone https://github.com/gabrielmoura-dev/calories-counter.git
+cd calories-counter
+
+# Instale as dependências
+npm install
+
+# Configure as variáveis de ambiente
+cp .env.example .env
+# Edite o .env com suas credenciais da Nutritionix
+
+# Rode o projeto
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📁 Estrutura do Projeto
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+calories-counter/
+├── public/             # Arquivos estáticos
+├── src/                # Código-fonte
+├── .env.example        # Template de variáveis de ambiente
+├── index.html          # Entry point HTML
+├── vite.config.ts      # Configuração do Vite + PWA
+├── tsconfig.json       # Configuração do TypeScript
+└── package.json
+```
+
+---
+
+## 🔑 Variáveis de Ambiente
+
+| Variável | Descrição |
+|----------|-----------|
+| `VITE_NUTRITIONIX_APP_ID` | App ID da API Nutritionix |
+| `VITE_NUTRITIONIX_APP_KEY` | App Key da API Nutritionix |
+
+Crie uma conta gratuita em [nutritionix.com/business/api](https://www.nutritionix.com/business/api) para obter suas credenciais.
+
+---
+
+## 📝 Licença
+
+Este projeto é de uso pessoal/educacional.
+
+---
+
+<div align="center">
+
+Desenvolvido por [Gabriel Moura](https://github.com/gabrielmoura-dev)
+
+</div>
