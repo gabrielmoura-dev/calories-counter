@@ -4,17 +4,6 @@ Aplicação web para registrar refeições e acompanhar o consumo diário de cal
 
 🔗 **[Acesse a aplicação](https://gabrielmoura-dev.github.io/calories-counter)**
 
-## Preview
-
-![Busca de alimentos com tradução PT/ES → EN](docs/screenshots/food-search.png)
-Busca de alimentos com tradução PT/ES → EN
-
-![Cálculo de porção por quantidade de itens](docs/screenshots/portion-modal.png)
-Cálculo de porção por quantidade de itens
-
-![Resumo diário com metas e macronutrientes](docs/screenshots/daily-summary.png)
-Resumo diário com metas e macronutrientes
-
 ## Funcionalidades
 
 - Busca de alimentos por nome, combinando resultados locais e da USDA FoodData Central
@@ -83,6 +72,13 @@ calories-counter/
 | `VITE_USDA_API_KEY` | API key da [USDA FoodData Central](https://fdc.nal.usda.gov/api-guide.html), usada para buscar alimentos que não estão na base local |
 
 Crie uma conta gratuita em [fdc.nal.usda.gov/api-guide.html](https://fdc.nal.usda.gov/api-guide.html) para obter sua chave.
+
+## Preview
+
+![Busca de alimentos com tradução PT/ES → EN](docs/screenshots/food-search.png)
+
+
+![Resumo diário com metas e macronutrientes](docs/screenshots/daily-summary.png)
 
 ## Licença
 
