@@ -4,9 +4,7 @@ Aplicação web para registrar refeições e acompanhar o consumo diário de cal
 
 🔗 **[Acesse a aplicação](https://gabrielmoura-dev.github.io/calories-counter)**
 
----
-
-## ✨ Funcionalidades
+## Funcionalidades
 
 - Busca de alimentos por nome, combinando resultados locais e da USDA FoodData Central
 - Busca em português e espanhol: como a USDA FoodData Central só indexa termos em inglês, uma camada de tradução própria (dicionário `TRANSLATIONS` em `src/services/usda.ts`) converte termos comuns em PT/ES para EN antes de consultar a API
@@ -17,9 +15,7 @@ Aplicação web para registrar refeições e acompanhar o consumo diário de cal
 - Interface responsiva com Tailwind CSS
 - Suporte a PWA (Progressive Web App) - instalável no celular
 
----
-
-## 🛠️ Tecnologias
+## Tecnologias
 
 <div align="center">
 
@@ -31,9 +27,7 @@ Aplicação web para registrar refeições e acompanhar o consumo diário de cal
 
 </div>
 
----
-
-## 🚀 Como rodar localmente
+## Como rodar localmente
 
 ### Pré-requisitos
 
@@ -58,9 +52,7 @@ cp .env.example .env
 npm run dev
 ```
 
----
-
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 calories-counter/
@@ -73,9 +65,7 @@ calories-counter/
 └── package.json
 ```
 
----
-
-## 🔑 Variáveis de Ambiente
+## Variáveis de Ambiente
 
 | Variável | Descrição |
 |----------|-----------|
@@ -83,13 +73,9 @@ calories-counter/
 
 Crie uma conta gratuita em [fdc.nal.usda.gov/api-guide.html](https://fdc.nal.usda.gov/api-guide.html) para obter sua chave.
 
----
-
-## 📝 Licença
+## Licença
 
 Este projeto é de uso pessoal/educacional.
-
----
 
 <div align="center">
 
