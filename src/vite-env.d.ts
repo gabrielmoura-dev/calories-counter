@@ -2,8 +2,7 @@
 /// <reference types="vite-plugin-pwa/client" />
 
 interface ImportMetaEnv {
-  readonly VITE_NUTRITIONIX_APP_ID: string
-  readonly VITE_NUTRITIONIX_APP_KEY: string
+  readonly VITE_USDA_API_KEY: string
 }
 
 interface ImportMeta {
